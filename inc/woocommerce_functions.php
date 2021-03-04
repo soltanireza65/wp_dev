@@ -1,7 +1,6 @@
 <?php
 
-function dokan_dashboard_btn()
-{
+function dokan_dashboard_btn() {
     if (!dokan_is_user_seller(get_current_user_id())) {
         return;
     }
@@ -15,14 +14,12 @@ function dokan_dashboard_btn()
 
 // add_filter('woocommerce_product_subcategories_args', 'custom_woocommerce_product_subcategories_args');
 
-function custom_woocommerce_product_subcategories_args($args)
-{
+function custom_woocommerce_product_subcategories_args($args) {
     $args['exclude'] = get_option('default_product_cat');
     return $args;
 }
 
-function wc_hide_selected_terms($terms, $taxonomies, $args)
-{
+function wc_hide_selected_terms($terms, $taxonomies, $args) {
     $new_terms = array();
     if (in_array('product_cat', $taxonomies) && !is_admin() && is_shop()) {
         foreach ($terms as $key => $term) {
@@ -37,8 +34,7 @@ function wc_hide_selected_terms($terms, $taxonomies, $args)
 // add_filter('get_terms', 'wc_hide_selected_terms', 10, 3);
 
 add_filter('pre_get_posts', '_themename_onsale_filters');
-function _themename_onsale_filters($query)
-{
+function _themename_onsale_filters($query) {
     if ($query->is_main_query() && $query->post_type = 'product') {
         if (isset($_GET['onsale'])) {
             $meta_query = array(
@@ -75,8 +71,7 @@ function _themename_onsale_filters($query)
 
 
 // add_filter( 'gettext', '_themename_no_reviews_heading', 20, 3 );
-function _themename_no_reviews_heading($translated, $text, $domain)
-{
+function _themename_no_reviews_heading($translated, $text, $domain) {
 
     if (function_exists('is_product') && is_product() && $translated == 'Reviews' && $domain == 'woocommerce') {
         $translated = 'Ooops... No reviews yet. Please leave one!';
@@ -87,29 +82,25 @@ function _themename_no_reviews_heading($translated, $text, $domain)
 
 
 // add_filter( 'woocommerce_reviews_title', '_themename_reviews_heading', 10, 3 );
-function _themename_reviews_heading($heading, $count, $product)
-{
+function _themename_reviews_heading($heading, $count, $product) {
 
     return 'What customers think about this product';
 }
 
 // add_filter( 'woocommerce_product_additional_information_heading', '_themename_additional_info_heading' );
-function _themename_additional_info_heading($heading)
-{
+function _themename_additional_info_heading($heading) {
 
     return 'My new heading';
 }
 
 // add_filter( 'woocommerce_product_description_heading', '_themename_description_heading' );
-function _themename_description_heading($heading)
-{
+function _themename_description_heading($heading) {
 
     return 'My new heading';
 }
 
 // add_filter( 'woocommerce_product_tabs', '_themename_rename_reviews_tab' );
-function _themename_rename_reviews_tab($tabs)
-{
+function _themename_rename_reviews_tab($tabs) {
 
     $tabs['reviews']['title'] = str_replace('Reviews', 'What customers are saying', $tabs['reviews']['title']);
 
@@ -118,19 +109,17 @@ function _themename_rename_reviews_tab($tabs)
 
 // add_filter( 'woocommerce_product_tabs', '_themename_rename_additional_info_tab' );
 
-function _themename_rename_additional_info_tab($tabs)
-{
+function _themename_rename_additional_info_tab($tabs) {
 
     $tabs['additional_information']['title'] = 'Product size';
 
     return $tabs;
 }
 
-function _themename_product_cat_list()
-{
+function _themename_product_cat_list() {
     $term_id              = 'product_cat';
     $categories           = get_terms($term_id);
-    // $cat_array['all'] = 'All Categories';
+    $cat_array['all'] = 'All Categories';
 
     if (!empty($categories)) {
         foreach ($categories as $cat) {
@@ -143,8 +132,7 @@ function _themename_product_cat_list()
 }
 
 
-function shorten_woo_product_title($title, $id)
-{
+function shorten_woo_product_title($title, $id) {
     if (is_shop() || is_product_category() || is_product_tag() || is_home() || is_front_page()) {
 
         if (get_post_type($id) == 'product') {
@@ -157,8 +145,7 @@ function shorten_woo_product_title($title, $id)
 }
 // add_filter('the_title', 'shorten_woo_product_title', 10, 2);
 
-function _themename_show_product_tags()
-{
+function _themename_show_product_tags() {
     $current_tags = get_the_terms(get_the_ID(), 'product_tag');
     if ($current_tags && !is_wp_error($current_tags)) {
         echo '<ul class="product_tags">';
@@ -173,8 +160,7 @@ function _themename_show_product_tags()
 }
 
 //add_action( 'woocommerce_single_product_summary', 'display_author_name', 20 );
-function display_author_name()
-{
+function display_author_name() {
     // Get the author ID (the vendor ID)
     $vendor_id = get_post_field('post_author', get_the_id());
     // Get the WP_User object (the vendor) from author ID
@@ -197,8 +183,7 @@ function display_author_name()
 
 
 // add_action('woocommerce_single_product_summary', 'display_some_product_attributes', 25);
-function _themename_woo_attribute_custom()
-{
+function _themename_woo_attribute_custom() {
     // HERE define the desired product attributes to be displayed
     $defined_attributes = array('fyllighet', 'carrier', 'billing-e-number');
 
@@ -274,8 +259,7 @@ function _themename_woo_attribute_custom()
 }
 
 
-function _themename_woo_attribute()
-{
+function _themename_woo_attribute() {
     global $product;
     $attributes = $product->get_attributes();
     if (!$attributes) {
@@ -318,15 +302,13 @@ function _themename_woo_attribute()
 }
 //add_action('woocommerce_single_product_summary', '_themename_woo_attribute', 25);
 
-function _themename_have_coupon_message()
-{
+function _themename_have_coupon_message() {
     return '<i class="fa fa-ticket" aria-hidden="true"></i> Have a coupon? <a href="#" class="showcoupon">Click here to enter your discount code</a>';
 }
 // add_filter('woocommerce_checkout_coupon_message', '_themename_have_coupon_message');
 
 
-function _themename_custom_pagination()
-{
+function _themename_custom_pagination() {
     global $wp_query;
     if ($wp_query->max_num_pages <= 1) {
         return;
@@ -354,8 +336,7 @@ function _themename_custom_pagination()
     }
 }
 
-function _themename_woocommerce_breadcrumbs()
-{
+function _themename_woocommerce_breadcrumbs() {
     return array(
         'delimiter'   => '&#47;',
         'wrap_before' => '<div class="woocommerce_breadcrumb_container container "><nav class="text-right d-flex align-items-center text-secondary woocommerce-breadcrumb" itemprop="breadcrumb"><i class="fal fa-map-marker-alt text-right fa-2x px-2"></i>',
@@ -369,8 +350,7 @@ add_filter('woocommerce_breadcrumb_defaults', '_themename_woocommerce_breadcrumb
 
 
 add_filter('woocommerce_sale_flash', '_themename_add_percentage_to_sale_badge', 20, 3);
-function _themename_add_percentage_to_sale_badge($html, $post, $product)
-{
+function _themename_add_percentage_to_sale_badge($html, $post, $product) {
 
     if ($product->is_type('variable')) {
         $percentages = array();

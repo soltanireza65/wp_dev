@@ -126,17 +126,15 @@ class Widget_Loader {
             require_once __DIR__ . '/widgets/category_carousel.php';
             Plugin::instance()->widgets_manager->register_widget_type(new CategoryCarouselWidget());
 
-            // require_once __DIR__ . '/widgets/product_carousel.php';
-            // Plugin::instance()->widgets_manager->register_widget_type(new ProductCarouselWidget());
+            require_once __DIR__ . '/widgets/product_carousel.php';
+            Plugin::instance()->widgets_manager->register_widget_type(new ProductCarouselWidget());
 
             require_once __DIR__ . '/widgets/product_carousel_on_sale.php';
             Plugin::instance()->widgets_manager->register_widget_type(new ProductCarouselOnSaleWidget());
 
 
-            // require_once __DIR__ . '/widgets/product_carousel_titled.php';
-            // Plugin::instance()->widgets_manager->register_widget_type(new ProductCarouselTitlesWidget());
-
-
+            require_once __DIR__ . '/widgets/product_carousel_titled.php';
+            Plugin::instance()->widgets_manager->register_widget_type(new ProductCarouselTitlesWidget());
         }
     }
 

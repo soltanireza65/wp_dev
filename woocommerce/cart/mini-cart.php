@@ -85,7 +85,10 @@ do_action('woocommerce_before_mini_cart'); ?>
 <?php else : ?>
 
 	<div class="woocommerce-mini-cart__empty-message text-center">
-		<img src="<?php echo get_template_directory_uri() . '/assets/images/svg/box_empty.svg' ?>" alt="">
+		<!-- <img src="http://localhost/wp/wp-content/themes/shop/dist/assets/images/svg/box_empty.svg" alt=""> -->
+		<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/svg/box_empty.svg' ?>" alt="">
+
+
 		<p>سبد خرید شما خالیست.</p>
 	</div>
 
