@@ -23,6 +23,8 @@ get_header('shop');
 
         <!-- sidebar  d-none d-lg-block -->
         <section class="sidebar d-none d-lg-block col-3">
+
+            <?php dynamic_sidebar('sidebar_store'); ?>
             <?php do_action('woocommerce_sidebar'); ?>
         </section>
 
