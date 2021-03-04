@@ -11,6 +11,12 @@
 </head>
 
 <body <?php body_class(); ?>>
+    <pre>
+    <?php
+    print_r(_themename_get_option('opt_shop_background', '#f0f0f1'));
+    ?>
+    </pre>
+
     <?php wp_body_open(); ?>
     <!-- <div id="page" class="site"> -->
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', '_themename'); ?></a>

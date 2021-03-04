@@ -4,7 +4,8 @@ function css_option() {
 ?>
     <style>
         body {
-            background: <?php echo _themename_get_option('opt_shop_background', '#f0f0f1'); ?>;
+            background-image: url("<?php echo _themename_get_option('opt_shop_background', '#f0f0f1')['background-image']['url']; ?>");
+            background-color: <?php echo _themename_get_option('opt_shop_background', '#f0f0f1')['background-color']; ?>;
         }
     </style>
 <?php
