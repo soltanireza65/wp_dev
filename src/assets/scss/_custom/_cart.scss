@@ -165,8 +165,8 @@ p.no-comments {
   }
 }
 
-// .woocommerce ul.product_list_widget li img:hover {
-//   opacity: 0 !important;
-// }
 
-// attachment-woocommerce_thumbnail size-woocommerce_thumbnail
+.woocommerce-page table.cart td.actions {
+  padding: 0;
+  padding-top: 20px;
+}
