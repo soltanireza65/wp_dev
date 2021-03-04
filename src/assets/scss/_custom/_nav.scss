@@ -57,19 +57,14 @@
     }
   }
 }
-
-// #mega_menu:first-child {
-//   opacity: 1;
-//   visibility: visible;
-//   // margin-top: 0px;
-// }
-
-.app_megamenu_wrapper #mega_menu .megamenu_tab .sub-menu:first-child {
-  // opacity: 1 !important;
-  // visibility: visible !important;
+#mega-menu-item-65 > ul {
+  border-radius: 15px !important;
 }
 
-// .app_megamenu_trigger:hover + .sub-menu {
-//   opacity: 1 !important;
-//   visibility: visible !important;
-// }
+nav#site-navigation
+  div#mega-menu-wrap-mega_menu
+  ul#mega-menu-mega_menu
+  li.mega-menu-item-has-children
+  ul.mega-sub-menu {
+  border-radius: 15px !important;
+}

@@ -1,9 +1,10 @@
 <?php
-function _themename_widgets_init() {
+function _themename_widgets_init()
+{
     register_sidebar(
         [
-            'name'          => esc_html__('Sidebar', '_themename'),
-            'id'            => 'sidebar-1',
+            'name'          => esc_html__('سایدبار فروشگاه', '_themename'),
+            'id'            => 'sidebar_store',
             'description'   => esc_html__('Add widgets here.', '_themename'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',

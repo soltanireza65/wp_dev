@@ -150,7 +150,7 @@ if (!function_exists('_themename_woocommerce_cart_link')) {
 			?>
 			<!-- <span class="amount"><?php echo wp_kses_data(WC()->cart->get_cart_subtotal()); ?></span> -->
 
-			<i class="fal fa-shopping-cart fontsize_17 icon-size-md circle_padding_white position-relative">
+			<i class="fal fa-shopping-cart app_woo_shopping_icon fontsize_17 icon-size-md circle_padding_white position-relative">
 				<span class="position-absolute app_woo_cart_qty">
 					<?php echo WC()->cart->get_cart_contents_count(); ?>
 				</span>

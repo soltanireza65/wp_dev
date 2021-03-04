@@ -39,13 +39,13 @@ do_action('woocommerce_before_mini_cart'); ?>
 						<div class="mini_cart_thumb_wraper">
 							<?php echo $thumbnail; ?>
 						</div>
-						<p class="text-right"><?php echo wp_trim_words($product_name, 4) ?></p>
+						<p class="text-right"><?php echo wp_trim_words($product_name, 5) ?></p>
 					<?php else : ?>
 						<a href="<?php echo esc_url($product_permalink); ?>">
 							<div class="mini_cart_thumb_wraper">
 								<?php echo $thumbnail; ?>
 							</div>
-							<p class="text-right"><?php echo wp_trim_words($product_name, 4) ?></p>
+							<p class="text-right"><?php echo wp_trim_words($product_name, 5) ?></p>
 						</a>
 					<?php endif; ?>
 					<?php

@@ -25,20 +25,10 @@
 
             <div class="d-flex position-relative">
                 <div class="d-flex align-items-center p-0 px-1 text-secondary">
-
-                    <a class="ml-3 d-none d-md-block" href="<?php echo get_site_url() . '/wishlist'; ?>">
-                        <i class="fal fa-heart fontsize_17 icon-size-md circle_padding_white"></i>
-                    </a>
-
-                    <?php
-                    if (function_exists('_themename_woocommerce_header_cart')) {
-                        _themename_woocommerce_header_cart();
-                    }
-                    ?>
-
                     <div class="user_links_dropdown mr-3 ">
-                        <a class="dropbtn"><i class="fal fa-user fontsize_17 circle_padding_white"></i></a>
-                        <div class=" text-center overflow-hidden bg-white user_links_dropdown-content text-right border-0 radius app_auth_urls" aria-labelledby="dropdownMenuButton">
+                        <a href="#" class="dropbtn app_woo_user_icon"><i class="fal fa-user  fontsize_17 circle_padding_white"></i></a>
+
+                        <div class=" text-center overflow-hidden user_links_dropdown-content text-right border-0 radius app_auth_urls" aria-labelledby="dropdownMenuButton">
 
                             <?php if (is_user_logged_in()) : ?>
                                 <?php
@@ -61,11 +51,26 @@
                                 <?php wp_loginout(); ?>
                             <?php else : ?>
                                 <a class="text-center dropdown-item" href="<?php echo get_site_url() ?>/shop_proj/my-account/">ورود/ ثبت نام</a>
-                                <!-- <a class="dropdown-item" href="<?php echo get_site_url() ?>/shop_proj/my-account/?register">ثبت نام</a>
-                                <a class="dropdown-item" href="<?php echo get_site_url() ?>/shop_proj/my-account/?register">ثبت نام</a> -->
+
                             <?php endif; ?>
                         </div>
                     </div>
+
+
+
+                    <a class="ml-3 d-none d-md-block app_woo_wishlist_icon" href="<?php echo get_site_url() . '/wishlist'; ?>">
+                        <i class="fal fa-heart fontsize_17 icon-size-md circle_padding_white"></i>
+                    </a>
+
+                    <div class="app_woo_mini_cart">
+                        <?php
+                        if (function_exists('_themename_woocommerce_header_cart')) {
+                            _themename_woocommerce_header_cart();
+                        }
+                        ?>
+                    </div>
+
+
                 </div>
             </div>
         </div>

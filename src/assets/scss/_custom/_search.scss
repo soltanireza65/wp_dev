@@ -65,3 +65,12 @@ div.header_search_form_wraper span.selection {
     height: 43px;
   }
 }
+
+.app_woo_search_field{
+  height: 43px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+  // line-height: 3.1;
+  display: none !important;
+}
