@@ -15,8 +15,13 @@
   background-color: $color__gray_light;
   width: 80vw;
   border-radius: 20px;
-  // height: 200px;
-  //   position: absolute;
-  // margin-top: -120px;
-  //   box-shadow: $box_shadow_main;
+  margin-bottom: -120px;
+  box-shadow: $box_shadow_main;
+  z-index: 1;
+  position: relative;
+}
+
+.site-footer .footer-copyright {
+  background-color: #ffffff;
+  height: 200px;
 }

@@ -1,5 +1,5 @@
 </div>
-<footer id="colophon" class="site-footer">
+<footer id="" class="site-footer">
 
     <div class="app_footer_box mx-auto">
         <div class="d-none d-md-flex justify-content-around container pt-3 pb-5">
@@ -112,7 +112,17 @@
             <!-- Grid row -->
         </div>
     </div>
-    <div class="footer-copyright text-center py-3">© 2020 <a href="http://pypracts.ir">PyPracts</a></div>
+    <div class="footer-copyright text-center py-3 position-relative d-flex flex-column justify-content-end">
+        <span>
+            <p class="footer_copyright_text d-inline">
+                <?php
+                echo _themename_get_option('opt_footer_text', 'default value');
+                ?>
+            </p>
+            طراح:
+            <a href="http://pypracts.ir">PyPracts</a>
+        </span>
+    </div>
     </div>
 </footer>
 

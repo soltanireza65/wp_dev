@@ -1,4 +1,6 @@
-<?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access directly.
+<?php if (!defined('ABSPATH')) {
+    die;
+} // Cannot access directly.
 /**
  *
  * @package   Codestar Framework - WordPress Options Framework
@@ -17,4 +19,4 @@
  * Domain Path: /languages
  *
  */
-require_once plugin_dir_path( __FILE__ ) .'classes/setup.class.php';
+require_once plugin_dir_path(__FILE__) . 'classes/setup.class.php';

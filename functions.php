@@ -20,6 +20,7 @@ require_once get_theme_file_path() . '/inc/theme_options/options/widget-options.
 
 require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-style.php';
 require get_template_directory() . '/inc/setup-theme.php';
 require get_template_directory() . '/inc/enqueue.php';
 require get_template_directory() . '/inc/template-tags.php';
