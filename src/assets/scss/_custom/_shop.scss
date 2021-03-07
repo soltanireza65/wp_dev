@@ -212,7 +212,8 @@ a.button.added::after,
 }
 
 .product_sorting_panel {
-  box-shadow: 0px 0px 15px 0px hsla(0, 0%, 0%, 0.2);
+  box-shadow: $box_shadow_secondary;
+  overflow: hidden;
   border-radius: 15px;
 }
 
@@ -271,4 +272,3 @@ form.comment-form {
     padding: 12px 30px !important;
   }
 }
-

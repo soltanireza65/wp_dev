@@ -11,11 +11,11 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <pre>
+    <!-- <pre> -->
     <?php
-    print_r(_themename_get_option('opt_shop_background', '#f0f0f1'));
+    // print_r(_themename_get_option('opt_shop_background', '#f0f0f1'));
     ?>
-    </pre>
+    <!-- </pre> -->
 
     <?php wp_body_open(); ?>
     <!-- <div id="page" class="site"> -->
