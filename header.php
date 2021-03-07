@@ -11,11 +11,11 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <pre>
+    <!-- <pre> -->
     <?php
-    print_r(_themename_get_option('opt_shop_background', '#f0f0f1'));
+    // print_r(_themename_get_option('opt_shop_background', '#f0f0f1'));
     ?>
-    </pre>
+    <!-- </pre> -->
 
     <?php wp_body_open(); ?>
     <!-- <div id="page" class="site"> -->
@@ -25,8 +25,12 @@
             <div class="site-branding">
                 <?php the_custom_logo(); ?>
             </div>
-            <div class="header_search_form_wraper w-50">
-                <?php _themename_woo_product_search(); ?>
+            <div class="header_search_form_wraper">
+                <?php
+                _themename_woo_product_search();
+                // the_widget('product_search_widget');
+                // dynamic_sidebar('ajax_search');
+                ?>
             </div>
 
             <div class="d-flex position-relative">

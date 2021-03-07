@@ -119,7 +119,7 @@ function _themename_rename_additional_info_tab($tabs) {
 function _themename_product_cat_list() {
     $term_id              = 'product_cat';
     $categories           = get_terms($term_id);
-    $cat_array['all'] = 'All Categories';
+    // $cat_array['all'] = 'All Categories';
 
     if (!empty($categories)) {
         foreach ($categories as $cat) {
@@ -137,13 +137,13 @@ function shorten_woo_product_title($title, $id) {
 
         if (get_post_type($id) == 'product') {
 
-            $title = wp_trim_words($title, 5);
+            $title = wp_trim_words($title, 7);
         }
     }
 
     return $title;
 }
-// add_filter('the_title', 'shorten_woo_product_title', 10, 2);
+add_filter('the_title', 'shorten_woo_product_title', 10, 2);
 
 function _themename_show_product_tags() {
     $current_tags = get_the_terms(get_the_ID(), 'product_tag');

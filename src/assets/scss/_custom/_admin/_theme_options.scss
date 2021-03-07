@@ -82,7 +82,7 @@ $color_red: #dc3545;
   border-radius: 10px;
   background-color: $color_orange;
   border: none;
-  &:hover{
+  &:hover {
     background-color: $color_orange-dark;
   }
 }
@@ -90,11 +90,11 @@ $color_red: #dc3545;
   border-radius: 10px;
   background-color: $color_cyan;
   border: none;
-  &:hover{
+  &:hover {
     background-color: $color_cyan_dark;
   }
 }
 
-.csf--button{
+.csf--button {
   background-color: black;
 }

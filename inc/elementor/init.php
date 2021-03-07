@@ -121,20 +121,29 @@ class Widget_Loader {
         );
     }
     public function init_widgets() {
+        Plugin::instance()->widgets_manager->unregister_widget_type('woocommerce-breadcrumb');
+        Plugin::instance()->widgets_manager->unregister_widget_type('woocommerce-menu-cart');
+        Plugin::instance()->widgets_manager->unregister_widget_type('wc-elements');
+        Plugin::instance()->widgets_manager->unregister_widget_type('woocommerce-products');
+
+        // require_once __DIR__ . '/widgets/hero_carousel.php';
+        // Plugin::instance()->widgets_manager->register_widget_type(new HeroCarouselWidget());
 
         if (class_exists('WooCommerce')) {
-            require_once __DIR__ . '/widgets/category_carousel.php';
-            Plugin::instance()->widgets_manager->register_widget_type(new CategoryCarouselWidget());
+            // require_once __DIR__ . '/widgets/category_carousel.php';
+            // Plugin::instance()->widgets_manager->register_widget_type(new CategoryCarouselWidget());
 
-            require_once __DIR__ . '/widgets/product_carousel.php';
-            Plugin::instance()->widgets_manager->register_widget_type(new ProductCarouselWidget());
+            // require_once __DIR__ . '/widgets/product_carousel.php';
+            // Plugin::instance()->widgets_manager->register_widget_type(new ProductCarouselWidget());
 
-            require_once __DIR__ . '/widgets/product_carousel_on_sale.php';
-            Plugin::instance()->widgets_manager->register_widget_type(new ProductCarouselOnSaleWidget());
+            // require_once __DIR__ . '/widgets/product_carousel_on_sale.php';
+            // Plugin::instance()->widgets_manager->register_widget_type(new ProductCarouselOnSaleWidget());
 
 
             require_once __DIR__ . '/widgets/product_carousel_titled.php';
             Plugin::instance()->widgets_manager->register_widget_type(new ProductCarouselTitlesWidget());
+            // require_once __DIR__ . '/widgets/woo_product_carousel.php';
+            // Plugin::instance()->widgets_manager->register_widget_type(new WooProductsCarousel());
         }
     }
 

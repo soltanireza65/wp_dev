@@ -1,5 +1,4 @@
 <?php
-// require_once get_template_directory() . '/inc/elementor/helpers/utlis.php';
 
 use Elementor\Controls_Manager;
 use Elementor\Widget_Base;
@@ -7,23 +6,6 @@ use Elementor\Widget_Base;
 if (!defined('ABSPATH')) {
 	exit;
 }
-
-
-// function _themename_product_cat_list() {
-// 	$term_id              = 'product_cat';
-// 	$categories           = get_terms($term_id);
-// 	// $cat_array['all'] = 'All Categories';
-
-// 	if (!empty($categories)) {
-// 		foreach ($categories as $cat) {
-// 			$cat_info 	 = get_term($cat, $term_id);
-// 			$cat_array[$cat_info->slug] = $cat_info->name;
-// 		}
-// 	}
-
-// 	return $cat_array;
-// }
-
 class ProductCarouselTitlesWidget extends Widget_Base {
 
 	public function get_name() {
@@ -41,6 +23,8 @@ class ProductCarouselTitlesWidget extends Widget_Base {
 	public function get_categories() {
 		return ['pypracts'];
 	}
+
+
 
 
 	protected function _register_controls() {
@@ -70,7 +54,7 @@ class ProductCarouselTitlesWidget extends Widget_Base {
 				'type'     => \Elementor\Controls_Manager::SELECT2,
 				'multiple' => true,
 				'options'  => _themename_product_cat_list(),
-				// 'default'  => ['all']
+				'default'  => ['all']
 
 			]
 		);
@@ -159,8 +143,8 @@ class ProductCarouselTitlesWidget extends Widget_Base {
 ?>
 			<?php $uid = rand(897987, 9879877); ?>
 
-			<section class="product-carousel-wraper bg-white px-2 rounded">
-				<div class="bg-white rounded overflow-hidden">
+			<section class="product-carousel-wraper rounded">
+				<div class="rounded overflow-hidden">
 					<h4 class="text-right pt-3 mr-4">
 						<?php
 						if (!empty($settings['title'])) {
@@ -176,14 +160,14 @@ class ProductCarouselTitlesWidget extends Widget_Base {
 					<?php //echo 'product-carousel-' . $uid 
 					?>
 					<!--" class="product-carousel row mx-auto">-->
-					<div id="product-carousel" class="product-carousel row mx-auto">
+					<div id="product-carousel" class="product-carousel mx-auto">
 						<!-- Additional required wrapper -->
 						<div class="swiper-wrapper">
 							<?php
 							while ($q->have_posts()) : $q->the_post();
 								global $product;
 							?>
-								<div class="swiper-slide">
+								<div class="swiper-slide" style="">
 
 									<?php
 									wc_get_template_part('content', 'product');

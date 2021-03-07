@@ -1,24 +1,20 @@
-<?php if ( ! defined( 'ABSPATH' )  ) { die; } // Cannot access directly.
+<?php if (!defined('ABSPATH')) {
+  die;
+} // Cannot access directly.
 
-//
-// Metabox of the PAGE
-// Set a unique slug-like ID
-//
 $prefix_page_opts = '_prefix_page_options';
 
-//
-// Create a metabox
-//
-CSF::createMetabox( $prefix_page_opts, array(
-  'title'        => 'دمو تنظیمات برگه',
-  'post_type'    => 'page',
+CSF::createMetabox($prefix_page_opts, array(
+  'title'        => 'دمو تنظیمات محصول',
+  'post_type'    => 'product',
   'show_restore' => true,
-) );
+  'priority'     => 'default',
+));
 
 //
 // Create a section
 //
-CSF::createSection( $prefix_page_opts, array(
+CSF::createSection($prefix_page_opts, array(
   'title'  => 'عمومی',
   'icon'   => 'fas fa-rocket',
   'fields' => array(
@@ -90,12 +86,12 @@ CSF::createSection( $prefix_page_opts, array(
     ),
 
   )
-) );
+));
 
 //
 // Create a section
 //
-CSF::createSection( $prefix_page_opts, array(
+CSF::createSection($prefix_page_opts, array(
   'title'  => 'سایر',
   'icon'   => 'fas fa-tint',
   'fields' => array(
@@ -147,7 +143,7 @@ CSF::createSection( $prefix_page_opts, array(
     ),
 
   )
-) );
+));
 
 //
 // Metabox of the POST
@@ -158,16 +154,16 @@ $prefix_post_opts = '_prefix_post_options';
 //
 // Create a metabox
 //
-CSF::createMetabox( $prefix_post_opts, array(
+CSF::createMetabox($prefix_post_opts, array(
   'title'        => 'دمو تنظیمات نوشته',
   'post_type'    => 'post',
   'show_restore' => true,
-) );
+));
 
 //
 // Create a section
 //
-CSF::createSection( $prefix_post_opts, array(
+CSF::createSection($prefix_post_opts, array(
   'fields' => array(
 
     //
@@ -236,7 +232,7 @@ CSF::createSection( $prefix_post_opts, array(
     ),
 
   )
-) );
+));
 
 //
 // Metabox of the PAGE and POST both.
@@ -247,16 +243,16 @@ $prefix_meta_opts = '_prefix_meta_options';
 //
 // Create a metabox
 //
-CSF::createMetabox( $prefix_meta_opts, array(
+CSF::createMetabox($prefix_meta_opts, array(
   'title'     => 'دمو تنظیمات کناری',
-  'post_type' => array( 'post', 'page' ),
+  'post_type' => array('post', 'page'),
   'context'   => 'side',
-) );
+));
 
 //
 // Create a section
 //
-CSF::createSection( $prefix_meta_opts, array(
+CSF::createSection($prefix_meta_opts, array(
   'fields' => array(
 
     //
@@ -294,4 +290,4 @@ CSF::createSection( $prefix_meta_opts, array(
     ),
 
   )
-) );
+));

@@ -47,9 +47,9 @@
                     </h6>
 
                     <?php
-                    wp_nav_menu([
-                        'theme_location' => 'footer-1'
-                    ])
+                    // wp_nav_menu([
+                    //     'theme_location' => 'footer-1'
+                    // ])
                     ?>
                 </div>
                 <!-- Grid column -->
@@ -65,9 +65,9 @@
 
 
                     <?php
-                    wp_nav_menu([
-                        'theme_location' => 'footer-1'
-                    ])
+                    // wp_nav_menu([
+                    //     'theme_location' => 'footer-1'
+                    // ])
                     ?>
                 </div>
 
@@ -80,9 +80,9 @@
 
 
                     <?php
-                    wp_nav_menu([
-                        'theme_location' => 'footer-1'
-                    ])
+                    // wp_nav_menu([
+                    //     'theme_location' => 'footer-1'
+                    // ])
                     ?>
 
                 </div>
@@ -92,7 +92,7 @@
                     <h6 class="font-weight-bold text-uppercase mt-3 mb-4 text-dark">
                         از تخفیف ها و محصولات جدید دکان با خبر شو:
                     </h6>
-                    <div class="newslater_wrapper">
+                    <!-- <div class="newslater_wrapper">
                         <?php echo do_shortcode('[mc4wp_form id="145"]'); ?>
                     </div>
                     <h6 class="font-weight-bold text-uppercase mt-3 mb-4 text-dark">
@@ -102,7 +102,7 @@
                         <a href="<?php echo get_theme_mod('instagram_url', 'https://www.instagram.com/') ?>"><i class="fab fa-instagram fa-2x ml-2"></i></a>
                         <a href="<?php echo get_theme_mod('telegram_url', 'https://www.telegram.com/') ?>"><i class="fab fa-telegram fa-2x ml-2"></i></a>
                         <a href="<?php echo get_theme_mod('twitter_url', 'https://www.twitter.com/') ?>"><i class="fab fa-twitter-square fa-2x"></i></a>
-                    </div>
+                    </div> -->
 
                 </div>
                 <!-- Grid column -->
