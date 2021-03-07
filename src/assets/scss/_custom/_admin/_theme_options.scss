@@ -98,3 +98,7 @@ $color_red: #dc3545;
 .csf--button {
   background-color: black;
 }
+
+.csf-theme-dark .csf-nav-normal ul li .csf-active:after{
+  content: none;
+}

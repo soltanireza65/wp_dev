@@ -15,6 +15,7 @@
 }
 
 .my_account_parrent {
+  box-shadow: $box_shadow_secondary;
   .account-orders-table {
     border: none !important;
     border-spacing: initial;
@@ -98,7 +99,7 @@ h2.app_woo_login_text,
 h2.app_woo_signup_text {
   transition: all 1s;
 }
-.app_woo_login{
+.app_woo_login {
   border-radius: 0 12px 12px 0;
 }
 .app_woo_signup:hover {
@@ -108,20 +109,18 @@ h2.app_woo_signup_text {
   }
 }
 
-
 .app_woo_login:hover {
-  h2.app_woo_login_text{
+  h2.app_woo_login_text {
     // color: $color__red;
     transform: scale(1.4);
   }
 }
 
-
-.show-password-input{
+.show-password-input {
   color: #545454;
 }
 
 .woocommerce-form-login__submit,
-.woocommerce-form-register__submit{
+.woocommerce-form-register__submit {
   border-radius: 10px !important;
 }

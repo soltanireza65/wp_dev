@@ -4,7 +4,7 @@
 defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_cart' ); ?>
-<div class="bg-white p-3 radius">
+<div class="bg-white p-3 radius app_woo_cart_wrapper">
 
     <form class="woocommerce-cart-form radius" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 		<?php do_action( 'woocommerce_before_cart_table' ); ?>

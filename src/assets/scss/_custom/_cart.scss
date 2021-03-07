@@ -165,8 +165,16 @@ p.no-comments {
   }
 }
 
-
 .woocommerce-page table.cart td.actions {
   padding: 0;
   padding-top: 20px;
+}
+// .entry-content {
+//   .woocommerce {
+    
+//   }
+// }
+.app_woo_cart_wrapper{
+  box-shadow: $box_shadow_secondary;
+    border-radius: 20px;
 }
