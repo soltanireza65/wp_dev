@@ -1,0 +1,28 @@
+$color__background-body: #fff;
+$color__background-screen: #f1f1f1;
+$color__background-hr: #ccc;
+$color__background-button: #e6e6e6;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
+$color__red: #DC3545;
+$color__dark_red: #cc0000;
+
+$color__text-screen: #21759b;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+$color__link: #797979; //royalblue
+$color__link-visited: #797979; //purple
+$color__link-hover: #DC3545; //midnightblue
+$color__text-main: #404040;
+
+$color__border-button: #DC3545;
+$color__border-button-hover: #DC3545;
+$color__border-button-focus: #DC3545;
+$color__border-input: #ccc;
+$color__border-abbr: #666;
+
+
+.app_bg_red_hover:hover{
+    background-color: #DC3545;
+    color: white !important;
+}

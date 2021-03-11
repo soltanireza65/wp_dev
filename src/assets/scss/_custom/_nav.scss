@@ -1,0 +1,70 @@
+.app_megamenu_wrapper {
+  // opacity: 0;
+  // visibility: hidden;
+  transition: all 0.4s;
+  // background-color: #353535;
+  border: 1px solid black;
+  // width: 1000px;
+  // height: fit-content;
+  // margin-top: 10px;
+
+  right: 100px;
+  left: 100px;
+}
+
+.app_megamenu_trigger:hover #mega_menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.app_megamenu_wrapper:hover {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 0px;
+}
+
+.app_megamenu_wrapper {
+  #mega_menu {
+    // position: relative;
+    display: inline-block;
+    // flex-direction: column;
+    // border: 1px solid teal;
+    > .megamenu_tab {
+      padding: 10px 10px 10px 50px;
+      // position: absolute;
+      > .sub-menu {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        // background-color: antiquewhite;
+        width: 90%;
+
+        // opacity: 0;
+        // visibility: hidden;
+        background-color: yellow;
+      }
+      > .sub-menu:not(:first-child) {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    .megamenu_tab:hover > .sub-menu {
+      background-color: yellow;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+#mega-menu-item-65 > ul {
+  border-radius: 15px !important;
+}
+
+nav#site-navigation
+  div#mega-menu-wrap-mega_menu
+  ul#mega-menu-mega_menu
+  li.mega-menu-item-has-children
+  ul.mega-sub-menu {
+  border-radius: 15px !important;
+}
