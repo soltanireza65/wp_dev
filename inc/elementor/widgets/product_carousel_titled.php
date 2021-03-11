@@ -188,7 +188,6 @@ class ProductCarouselTitlesWidget extends Widget_Base {
 									<?php
 									wc_get_template_part('content', 'product');
 									?>
-
 								</div>
 							<?php
 							endwhile;

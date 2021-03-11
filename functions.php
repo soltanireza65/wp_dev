@@ -26,6 +26,7 @@ require get_template_directory() . '/inc/enqueue.php';
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/Mobile-Detect/Mobile_Detect.php';
 if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
