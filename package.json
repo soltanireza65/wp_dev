@@ -1,5 +1,5 @@
 {
-  "name": "shop_theme",
+  "name": "wp_dev",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -35,6 +35,6 @@
   },
   "dependencies": {
     "jquery": "^3.3.1",
-    "swiper": "^6.4.15"
+    "swiper": "^6.5.0"
   }
 }

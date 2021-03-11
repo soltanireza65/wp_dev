@@ -181,14 +181,9 @@ class ProductCarouselTitlesWidget extends Widget_Base {
 					</div>
 				</div>
 			</section>
-
 		<?php
-
 		}
-
-
 		?>
 <?php
-
 	}
 }

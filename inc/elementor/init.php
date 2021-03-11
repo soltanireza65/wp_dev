@@ -121,10 +121,10 @@ class Widget_Loader {
         );
     }
     public function init_widgets() {
-        Plugin::instance()->widgets_manager->unregister_widget_type('woocommerce-breadcrumb');
-        Plugin::instance()->widgets_manager->unregister_widget_type('woocommerce-menu-cart');
-        Plugin::instance()->widgets_manager->unregister_widget_type('wc-elements');
-        Plugin::instance()->widgets_manager->unregister_widget_type('woocommerce-products');
+        // Plugin::instance()->widgets_manager->unregister_widget_type('woocommerce-breadcrumb');
+        // Plugin::instance()->widgets_manager->unregister_widget_type('woocommerce-menu-cart');
+        // Plugin::instance()->widgets_manager->unregister_widget_type('wc-elements');
+        // Plugin::instance()->widgets_manager->unregister_widget_type('woocommerce-products');
 
         // require_once __DIR__ . '/widgets/hero_carousel.php';
         // Plugin::instance()->widgets_manager->register_widget_type(new HeroCarouselWidget());
