@@ -25,7 +25,7 @@
             <div class="site-branding">
                 <?php the_custom_logo(); ?>
             </div>
-            <div class="header_search_form_wraper w-50">
+            <div class="header_search_form_wraper">
                 <?php _themename_woo_product_search(); ?>
             </div>
 
@@ -104,5 +104,7 @@
             ?>
         </nav>
     </header>
+
+
     <div id="page" class="site mx-auto rounded-2 mb-5">
         <a class="skip-link screen-reader-text d-none" href="#primary"><?php esc_html_e('Skip to content', '_themename'); ?></a>
