@@ -59,11 +59,16 @@
     display: none !important;
   }
 }
+.woocommerce-info{
+  border-radius: 20px;
+}
 
 .woocommerce-info,
 .woocommerce-noreviews,
 p.no-comments {
   background-color: #fff !important;
+  text-align: right;
+
 }
 
 #add_payment_method table.cart img,
@@ -178,3 +183,8 @@ p.no-comments {
   box-shadow: $box_shadow_secondary;
     border-radius: 20px;
 }
+
+// .table.shop_table_responsive tr td.product-remove{
+//   text-align: center !important;
+//     line-height: 1.2 !important;
+// }

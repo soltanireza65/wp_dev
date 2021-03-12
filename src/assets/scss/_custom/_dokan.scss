@@ -253,11 +253,14 @@ div.dokan-dashboard-content
   text-align: right !important;
 }
 
-.dokan-form-group{
+.dokan-form-group {
   margin-right: 0;
 }
 
-// .dokan-right-margin-30{
-//   margin-right: 0!important;
-//   width: 100% !important;
-// }
+#dokan-seller-listing-wrap .seller-listing-content .dokan-error, #dokan-store-listing-filter-wrap {
+  border-radius: 20px;
+}
+
+
+
+
