@@ -1,5 +1,27 @@
 (function ($) {
   jQuery(document).ready(function () {
+    let product_carousel_titled = new Swiper("#product_carousel_titled", {
+      slidesPerView: "auto",
+      loopFillGroupWithBlank: false,
+      slideBlankClass: "swiper-slide-invisible-blank",
+      breakpoints: {
+        480: {
+          slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 3,
+        },
+        1000: {
+          slidesPerView: 5,
+        },
+      },
+      autoplay: {
+        delay: 3000,
+      },
+      loop: true,
+      spaceBetween: 10,
+    });
+
     let productcarousel = new Swiper(".product-carousel", {
       slidesPerView: "auto",
       loopFillGroupWithBlank: false,

@@ -176,7 +176,7 @@ class ProductCarouselTitlesWidget extends Widget_Base {
 					<?php //echo 'product-carousel-' . $uid 
 					?>
 					<!--" class="product-carousel row mx-auto">-->
-					<div id="product-carousel" class="product-carousel row mx-auto">
+					<div id="product_carousel_titled" class="product-carousel product_carousel_titled row mx-auto">
 						<!-- Additional required wrapper -->
 						<div class="swiper-wrapper">
 							<?php
