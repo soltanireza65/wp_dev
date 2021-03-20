@@ -1,6 +1,8 @@
 @import "vendor/bootstrap/bootstrap_5";
+
 @import "vendor/select2/select";
 @import "vendor/swiper/swiper";
+// @import "plugins/swiper/swiper";
 
 @import "abstracts/abstracts";
 @import "generic/normalize";
@@ -8,9 +10,6 @@
 
 @import "components/components";
 // @import "plugins/jetpack/infinite-scroll";
-//@import "plugins/swiper/swiper";
-@import "plugins/bootstrap/bootstrap";
-@import "plugins/swiper/swiper";
 
 @import "_custom/elementor";
 @import "_custom/shadow";
@@ -46,12 +45,8 @@
 @import "_custom/breadcrumb";
 @import "_custom/page";
 
-
-
-
-
 // norm
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -70,11 +65,7 @@ p.demo_store {
 
 .woocommerce-store-notice.demo_store {
   background: rgb(63, 94, 251);
-  background: radial-gradient(
-    circle,
-    rgba(63, 94, 251, 1) 0%,
-    rgba(252, 70, 107, 1) 100%
-  );
+  background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
   font-size: 1.2rem;
 }
 
@@ -86,15 +77,7 @@ p.demo_store {
   }
 }
 
-.wooscp-area
-  .wooscp-inner
-  .wooscp-table
-  .wooscp-table-inner
-  .wooscp-table-items
-  table
-  tbody
-  tr
-  td {
+.wooscp-area .wooscp-inner .wooscp-table .wooscp-table-inner .wooscp-table-items table tbody tr td {
   width: 150px !important;
 }
 
@@ -123,5 +106,3 @@ p.demo_store {
 .line_height_3 {
   line-height: 3 !important;
 }
-
-
