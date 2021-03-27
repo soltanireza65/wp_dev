@@ -7,7 +7,12 @@ function _themename_scripts() {
     // wp_enqueue_script('_themename-bootstrap', '//cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js', ['jquery'], '1.0.0', true);
     // wp_enqueue_script('_themename-swiper', get_template_directory_uri() . '/src/assets/js/vendors/swiper.js', ['jquery'], '1.0.0', true);
     // wp_enqueue_script('_themename-scripts', get_template_directory_uri() . '/src/assets/js/vendors/select2.js', ['jquery'], '1.0.0', true);
+    // wp_enqueue_script('_themename-search', get_template_directory_uri() . '/inc/search/search.js', ['jquery'], '1.0.0', true);
     wp_enqueue_script('_themename-scripts', get_template_directory_uri() . '/dist/assets/js/bundle.js', ['jquery'], '1.0.0', true);
+
+    wp_localize_script('_themename-scripts', 'admin_url', array(
+        'ajax_url' => admin_url('admin-ajax.php')
+    ));
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');

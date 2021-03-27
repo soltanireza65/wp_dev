@@ -5,7 +5,7 @@ if (!defined('_themename_VERSION')) {
 }
 
 require_once __DIR__ . '/inc/elementor/init.php';
-
+require_once __DIR__ . '/inc/search/search.php';
 require_once get_theme_file_path() . '/inc/theme_options/codestar-framework.php';
 
 require_once get_theme_file_path() . '/inc/theme_options/options/admin-options.php';
