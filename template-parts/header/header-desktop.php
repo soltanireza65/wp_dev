@@ -6,7 +6,7 @@
                     <?php the_custom_logo(); ?>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" style="z-index: 33;">
                 <div class="header_search_form_wraper">
                     <?php
                     // _themename_woo_product_search();
@@ -14,19 +14,18 @@
                     <!-- ============================================================= -->
 
                     <form role="search" method="get" class="woocommerce-product-search" action="<?php echo esc_url(home_url('/')); ?>">
-                        <!-- <label class="screen-reader-text" for="woocommerce-product-search-field"></label> -->
-                        <input type="search" id="woocommerce-product-search" class="product-search-field" placeholder="<?php echo esc_attr__('Search products&hellip;', 'woocommerce'); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+                        <input type="text" id="keyword" name="s"></input>
 
                         <?php
-                        $product_cats = get_terms(array(
-                            'taxonomy' => 'product_cat',
-                        ));
+                        $product_cats = get_terms('product_cat', [
+                            'hide_empty' => false
+                        ]);
 
                         if (!empty($product_cats) && !is_wp_error($product_cats)) :
                             $selected_product_cat = get_query_var('product_cat');
                         ?>
-                            <select name="product_cat" id="product_cat_select" class="product_cat_select js-example-basic-single cate-dropdown">
-                                <option value="">دسته بندی ها</option>
+                            <select name="product_cat" id="product_cat" class="product_cat">
+                                <option value="" disabled selected>دسته بندی ها</option>
                                 <?php
                                 foreach ($product_cats as $product_cat) {
                                 ?>
@@ -35,19 +34,17 @@
                                 }
                                 ?>
                             </select>
-                            <script>
-                                jQuery(document).ready(function() {
-                                    jQuery('#product_cat_select').select2();
-                                });
-                            </script>
                         <?php endif; ?>
 
-                        <button type="submit" value="جستجو"><?php echo esc_html_x('Search', 'submit button', 'woocommerce'); ?></button>
+
+
+
+                        <button class="product_search_btn" id="product_search_btn" type="submit" value="جستجو">
+                            جستجو
+                        </button>
                         <input type="hidden" name="post_type" value="product" />
                     </form>
-                    <div id="search_result">
-
-                    </div>
+                    <div id="result">result</div>
 
                     <!-- ============================================================= -->
 
