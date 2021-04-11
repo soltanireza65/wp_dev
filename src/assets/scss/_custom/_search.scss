@@ -149,3 +149,21 @@
 .result-title {
   font-size: 1rem;
 }
+
+body:active,
+body:focus {
+  #result {
+    // opacity: 0;
+  }
+}
+
+.result-product {
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+#result {
+  // opacity: 0;
+}

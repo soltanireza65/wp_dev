@@ -24,8 +24,8 @@
     <input type="hidden" id="" name="post_type" value="product" />
 </form>
 <div class="result" id="result">
-    <ul class="products">
-        <li class="result-product d-flex justify-content-between">
+    <ul class="result_products" id="result_products">
+        <!-- <li class="result-product d-flex justify-content-between">
             <div class="d-flex align-items-center">
                 <img class="result-prodyct-image" src="https://demo.coderboy.ir/negarshop/wp-content/uploads/2021/02/nivea-soft-crem-191301411010_0_0-150x150.jpg" alt="">
                 <div class="mx-2">
@@ -42,6 +42,6 @@
                     <p class="m-0">۱,۷۸۹,۰۰۰ تومان</p>
                 </div>
             </div>
-        </li>
+        </li> -->
     </ul>
 </div>

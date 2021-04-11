@@ -65,7 +65,11 @@ p.demo_store {
 
 .woocommerce-store-notice.demo_store {
   background: rgb(63, 94, 251);
-  background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
   font-size: 1.2rem;
 }
 
@@ -77,7 +81,15 @@ p.demo_store {
   }
 }
 
-.wooscp-area .wooscp-inner .wooscp-table .wooscp-table-inner .wooscp-table-items table tbody tr td {
+.wooscp-area
+  .wooscp-inner
+  .wooscp-table
+  .wooscp-table-inner
+  .wooscp-table-items
+  table
+  tbody
+  tr
+  td {
   width: 150px !important;
 }
 
