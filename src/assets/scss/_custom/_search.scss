@@ -130,3 +130,22 @@
   width: 100%;
   box-shadow: $box_shadow_main;
 }
+
+.result-product {
+  margin: 5px;
+  // border: 1px solid rgba(128, 128, 128, 0.473);
+  box-shadow: $box_shadow_secondary;
+
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 3px;
+}
+
+.result-prodyct-image {
+  width: 40px;
+  height: 40px;
+}
+
+.result-title {
+  font-size: 1rem;
+}

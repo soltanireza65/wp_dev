@@ -25,10 +25,23 @@
 </form>
 <div class="result" id="result">
     <ul class="products">
-        <li class="d-flex justify-content-between">
-            <img src="" alt="">
-            <h5>titleeeeeeeeeeee</h5>
-            <p>4444444</p>
+        <li class="result-product d-flex justify-content-between">
+            <div class="d-flex align-items-center">
+                <img class="result-prodyct-image" src="https://demo.coderboy.ir/negarshop/wp-content/uploads/2021/02/nivea-soft-crem-191301411010_0_0-150x150.jpg" alt="">
+                <div class="mx-2">
+                    <h5 class="result-title m-0">ساعت مچی عقربه ای مردانه کنت کول مدل</h5>
+                    <p class="m-0">۱,۷۸۹,۰۰۰ تومان</p>
+                </div>
+            </div>
+        </li>
+        <li class="result-product d-flex justify-content-between">
+            <div class="d-flex align-items-center">
+                <img class="result-prodyct-image" src="https://demo.coderboy.ir/negarshop/wp-content/uploads/2021/02/nivea-soft-crem-191301411010_0_0-150x150.jpg" alt="">
+                <div class="mx-2">
+                    <h5 class="result-title m-0">ساعت مچی عقربه ای مردانه کنت کول مدل</h5>
+                    <p class="m-0">۱,۷۸۹,۰۰۰ تومان</p>
+                </div>
+            </div>
         </li>
     </ul>
 </div>
