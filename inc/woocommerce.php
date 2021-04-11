@@ -1,6 +1,5 @@
 <?php
-function _themename_woocommerce_setup()
-{
+function _themename_woocommerce_setup() {
 	add_theme_support(
 		'woocommerce',
 		array(
@@ -22,8 +21,7 @@ function _themename_woocommerce_setup()
 
 add_action('after_setup_theme', '_themename_woocommerce_setup');
 
-function _themename_woocommerce_scripts()
-{
+function _themename_woocommerce_scripts() {
 	wp_enqueue_style('_themename-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), _themename_VERSION);
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
@@ -53,8 +51,7 @@ add_action('wp_enqueue_scripts', '_themename_woocommerce_scripts');
  */
 // add_filter('woocommerce_enqueue_styles', '__return_empty_array');
 
-function _themename_woocommerce_active_body_class($classes)
-{
+function _themename_woocommerce_active_body_class($classes) {
 	$classes[] = 'woocommerce-active';
 
 	return $classes;
@@ -62,8 +59,7 @@ function _themename_woocommerce_active_body_class($classes)
 
 add_filter('body_class', '_themename_woocommerce_active_body_class');
 
-function _themename_woocommerce_related_products_args($args)
-{
+function _themename_woocommerce_related_products_args($args) {
 	$defaults = array(
 		'posts_per_page' => 3,
 		'columns'        => 3,
@@ -83,8 +79,7 @@ remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wra
 remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
 if (!function_exists('_themename_woocommerce_wrapper_before')) {
-	function _themename_woocommerce_wrapper_before()
-	{
+	function _themename_woocommerce_wrapper_before() {
 ?>
 		<main id="primary" class="site-main">
 		<?php
@@ -94,8 +89,7 @@ add_action('woocommerce_before_main_content', '_themename_woocommerce_wrapper_be
 
 if (!function_exists('_themename_woocommerce_wrapper_after')) {
 
-	function _themename_woocommerce_wrapper_after()
-	{
+	function _themename_woocommerce_wrapper_after() {
 		?>
 		</main><!-- #main -->
 	<?php
@@ -125,8 +119,7 @@ if (!function_exists('_themename_woocommerce_cart_link_fragment')) {
 	 *
 	 * @return array Fragments to refresh via AJAX.
 	 */
-	function _themename_woocommerce_cart_link_fragment($fragments)
-	{
+	function _themename_woocommerce_cart_link_fragment($fragments) {
 		ob_start();
 		_themename_woocommerce_cart_link();
 		$fragments['a.cart-contents'] = ob_get_clean();
@@ -137,24 +130,16 @@ if (!function_exists('_themename_woocommerce_cart_link_fragment')) {
 add_filter('woocommerce_add_to_cart_fragments', '_themename_woocommerce_cart_link_fragment');
 
 if (!function_exists('_themename_woocommerce_cart_link')) {
-	function _themename_woocommerce_cart_link()
-	{
+	function _themename_woocommerce_cart_link() {
 	?>
 		<a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php esc_attr_e('View your shopping cart', '_themename'); ?>">
-			<?php
-			$item_count_text = sprintf(
-				/* translators: number of items in the mini cart. */
-				_n('%d آیتم', '%d آیتم', WC()->cart->get_cart_contents_count(), '_themename'),
-				WC()->cart->get_cart_contents_count()
-			);
-			?>
-			<!-- <span class="amount"><?php echo wp_kses_data(WC()->cart->get_cart_subtotal()); ?></span> -->
 
-			<i class="fal fa-shopping-cart app_woo_shopping_icon fontsize_17 icon-size-md circle_padding_white position-relative">
-				<span class="position-absolute app_woo_cart_qty">
-					<?php echo WC()->cart->get_cart_contents_count(); ?>
-				</span>
+			<i class="woocommerce_cart_icon fal fa-shopping-cart position-relative text-white w-100">
+
 			</i>
+			<span class="position-absolute app_woo_cart_qty">
+				<?php echo WC()->cart->get_cart_contents_count(); ?>
+			</span>
 
 		</a>
 	<?php
@@ -162,8 +147,7 @@ if (!function_exists('_themename_woocommerce_cart_link')) {
 }
 
 if (!function_exists('_themename_woocommerce_header_cart')) {
-	function _themename_woocommerce_header_cart()
-	{
+	function _themename_woocommerce_header_cart() {
 		if (is_cart()) {
 			$class = 'current-menu-item';
 		} else {
@@ -171,7 +155,7 @@ if (!function_exists('_themename_woocommerce_header_cart')) {
 		}
 	?>
 		<ul id="site-header-cart" class="site-header-cart">
-			<li class="<?php echo esc_attr($class); ?>">
+			<li class="<?php echo esc_attr($class); ?> woocommerce_cart_link">
 				<?php _themename_woocommerce_cart_link(); ?>
 			</li>
 			<li>
@@ -192,8 +176,7 @@ if (!function_exists('_themename_woocommerce_header_cart')) {
 // Custom
 
 
-function _themename_woo_product_search()
-{
+function _themename_woo_product_search() {
 	?>
 	<form role="search" method="get" class="form-inline woocommerce-product-search" action="<?php echo esc_url(home_url('/')); ?>">
 		<div class="form-group d-flex">
@@ -236,15 +219,13 @@ remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_f
 
 
 // Yith Woo After Wishlist Button
-function _themename_browse_wishlist_button()
-{
+function _themename_browse_wishlist_button() {
 	return '<i class="fas fa-heart"></i>';
 }
 add_filter('yith-wcwl-browse-wishlist-label', '_themename_browse_wishlist_button');
 
 // Yith Woo After Wishlist Button
-function _themename_compare_label()
-{
+function _themename_compare_label() {
 	return '';
 }
 // add_filter('yith_woocompare_compare_added_label', '_themename_compare_label');
@@ -253,8 +234,7 @@ function _themename_compare_label()
 
 
 if (!function_exists('_themename_loop_columns')) {
-	function _themename_loop_columns()
-	{
+	function _themename_loop_columns() {
 		return 3;
 	}
 }
@@ -262,8 +242,7 @@ add_filter('loop_shop_columns', '_themename_loop_columns');
 
 
 
-function _themename_related_products_by_same_title($related_posts, $product_id, $args)
-{
+function _themename_related_products_by_same_title($related_posts, $product_id, $args) {
 	$product       = wc_get_product($product_id);
 	$title         = $product->get_name();
 	$related_posts = get_posts(array(
@@ -280,8 +259,7 @@ function _themename_related_products_by_same_title($related_posts, $product_id, 
 // add_filter('woocommerce_related_products', '_themename_related_products_by_same_title', 9999, 3);
 
 
-function _themename_related_products_args($args)
-{
+function _themename_related_products_args($args) {
 	$args['posts_per_page'] = 4; // 12 related products
 	$args['columns']        = 4; // arranged in 2 columns
 
@@ -291,8 +269,7 @@ function _themename_related_products_args($args)
 // add_filter('woocommerce_output_related_products_args', '_themename_related_products_args', 20);
 
 
-function _themename_remove_single_product_tabs($tabs)
-{
+function _themename_remove_single_product_tabs($tabs) {
 	unset($tabs['more_seller_product']);
 
 	return $tabs;
@@ -304,8 +281,7 @@ add_filter('woocommerce_product_tabs', '_themename_remove_single_product_tabs', 
 
 
 // Checkout Fields
-function _themename_remove_checkout_fields($fields)
-{
+function _themename_remove_checkout_fields($fields) {
 	// Billing fields
 	//	unset( $fields['billing']['billing_company'] );
 	//	unset( $fields['billing']['billing_email'] );
@@ -365,8 +341,7 @@ function _themename_remove_checkout_fields($fields)
 }
 // add_filter('woocommerce_checkout_fields', '_themename_remove_checkout_fields');
 
-function _themename_unrequire_wc_fields($fields)
-{
+function _themename_unrequire_wc_fields($fields) {
 	//	$fields['billing_phone']['required']   = false;
 	$fields['billing_country']['required'] = false;
 
@@ -376,8 +351,7 @@ function _themename_unrequire_wc_fields($fields)
 add_filter('woocommerce_billing_fields', '_themename_unrequire_wc_fields');
 
 
-function _themename_override_checkout_fields($fields)
-{
+function _themename_override_checkout_fields($fields) {
 	//     unset($fields['billing']['billing_address_2']);
 	//     $fields['billing']['billing_company']['placeholder'] = 'Business Name';
 	//     $fields['billing']['billing_company']['label'] = 'Business Name';
@@ -395,8 +369,7 @@ function _themename_override_checkout_fields($fields)
 
 // Reorder Checkout Fields
 
-function _themename_reorder_wc_fields($fields)
-{
+function _themename_reorder_wc_fields($fields) {
 	$order = array(
 		"billing_first_name",
 		"billing_last_name",
@@ -423,8 +396,7 @@ function _themename_reorder_wc_fields($fields)
 
 
 
-function _themename_show_tags()
-{
+function _themename_show_tags() {
 	$current_tags = get_the_terms(get_the_ID(), 'product_tag');
 	if ($current_tags && !is_wp_error($current_tags)) {
 		echo '<ul class="product_tags">';
@@ -446,8 +418,7 @@ function _themename_show_tags()
 
 
 
-function remove_last_woocommerce_structured_data_breadcrumblist($markup)
-{
+function remove_last_woocommerce_structured_data_breadcrumblist($markup) {
 	if (is_singular()) {
 		array_pop($markup['itemListElement']);
 	}
@@ -458,8 +429,7 @@ add_filter('woocommerce_structured_data_breadcrumblist', 'remove_last_woocommerc
 
 // add_action( 'woocommerce_product_options_general_product_data', '_themename_add_related_checkbox_products' );        
 
-function _themename_add_related_checkbox_products()
-{
+function _themename_add_related_checkbox_products() {
 	woocommerce_wp_checkbox(
 		array(
 			'id' => 'hide_related',
@@ -474,8 +444,7 @@ function _themename_add_related_checkbox_products()
 
 // add_action('save_post_product', '_themename_save_related_checkbox_products');
 
-function _themename_save_related_checkbox_products($product_id)
-{
+function _themename_save_related_checkbox_products($product_id) {
 	global $pagenow, $typenow;
 	if ('post.php' !== $pagenow || 'product' !== $typenow) return;
 	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
@@ -489,8 +458,7 @@ function _themename_save_related_checkbox_products($product_id)
 
 // add_action('woocommerce_after_single_product_summary', '_themename_hide_related_checkbox_products', 1);
 
-function _themename_hide_related_checkbox_products()
-{
+function _themename_hide_related_checkbox_products() {
 	global $product;
 	if (!empty(get_post_meta($product->get_id(), 'hide_related', true))) {
 		remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
@@ -513,8 +481,7 @@ function _themename_hide_related_checkbox_products()
 
 // add_action('wp', '_themename_remove_zoom_lightbox_theme_support', 99);
 
-function _themename_remove_zoom_lightbox_theme_support()
-{
+function _themename_remove_zoom_lightbox_theme_support() {
 	// remove_theme_support('wc-product-gallery-zoom');
 	// remove_theme_support('wc-product-gallery-lightbox');
 	// remove_theme_support('wc-product-gallery-slider');
@@ -527,8 +494,7 @@ function _themename_remove_zoom_lightbox_theme_support()
 
 
 // add_filter('avatar_defaults', '_themename_new_gravatar');
-function _themename_new_gravatar($avatar_defaults)
-{
+function _themename_new_gravatar($avatar_defaults) {
 	$myavatar = get_theme_file_uri('/dist/assets/images/default-profile.png');
 	$avatar_defaults[$myavatar] = "Default Gravatar";
 	return $avatar_defaults;

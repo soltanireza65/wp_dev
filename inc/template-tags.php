@@ -149,7 +149,7 @@ if (!function_exists('_themename_post_thumbnail')) :
 				?>
 			</a>
 
-<?php
+		<?php
 		endif; // End is_singular().
 	}
 endif;
@@ -162,5 +162,35 @@ if (!function_exists('wp_body_open')) :
 	 */
 	function wp_body_open() {
 		do_action('wp_body_open');
+	}
+endif;
+
+
+
+if (!function_exists('get_user_links')) :
+	function get_user_links() {
+		if (is_user_logged_in()) :
+			$myaccount_page_id = get_option('woocommerce_myaccount_page_id');
+			if ($myaccount_page_id) {
+				$myaccount_page_url = get_permalink($myaccount_page_id);
+			}
+
+		?>
+			<a class="dropdown-item" href="<?php echo $myaccount_page_url ?>">حساب کاربری</a>
+			<?php
+			$store_user = dokan()->vendor->get(get_query_var('author'));
+			// var_dump($store_user);
+			$user = wp_get_current_user();
+			if (in_array('seller', (array) $user->roles)) {
+			?>
+				<a class="dropdown-item seller_dash" href="<?php echo get_site_url() ?>/shop_proj/dashboard">پنل فروشندگان</a>
+			<?php
+			}
+			?>
+			<?php wp_loginout(); ?>
+		<?php else : ?>
+			<a class="text-center dropdown-item" href="<?php echo get_site_url() ?>/shop_proj/my-account/">ورود/ ثبت نام</a>
+<?php
+		endif;
 	}
 endif;

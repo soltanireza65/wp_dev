@@ -1,13 +1,11 @@
 <?php
 function _themename_scripts() {
+    // CSS
     wp_enqueue_style('_themename-fontawesome', get_template_directory_uri() . '/dist/assets/fonts/fa/css/all.min.css', [], '1.0.0', 'all');
     wp_enqueue_style('_themename-stylesheet', get_template_directory_uri() . '/dist/assets/css/bundle.css', [], '1.0.0', 'all');
 
-    // wp_enqueue_script('_themename-popper', '//cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', ['jquery'], '1.0.0', true);
-    // wp_enqueue_script('_themename-bootstrap', '//cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js', ['jquery'], '1.0.0', true);
-    // wp_enqueue_script('_themename-swiper', get_template_directory_uri() . '/src/assets/js/vendors/swiper.js', ['jquery'], '1.0.0', true);
-    // wp_enqueue_script('_themename-scripts', get_template_directory_uri() . '/src/assets/js/vendors/select2.js', ['jquery'], '1.0.0', true);
-    // wp_enqueue_script('_themename-search', get_template_directory_uri() . '/inc/search/search.js', ['jquery'], '1.0.0', true);
+
+    // JAVASCRIPT
     wp_enqueue_script('_themename-scripts', get_template_directory_uri() . '/dist/assets/js/bundle.js', ['jquery'], '1.0.0', true);
 
     wp_localize_script('_themename-scripts', 'admin_url', array(
@@ -27,3 +25,16 @@ function _themename_admin_assets() {
     wp_enqueue_script('_themename-admin-scripts', get_template_directory_uri() . '/dist/assets/js/admin.js', ['jquery'], '1.0.0', true);
 }
 add_action('admin_enqueue_scripts', '_themename_admin_assets');
+
+add_action('enqueue_block_editor_assets',  '_themename_block_editor_assets');
+function _themename_block_editor_assets() {
+    wp_register_script('_themename_blocks_bundle', get_template_directory_uri() . '/inc/blocks/dist/bundle.js', ['wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-api'], '1.0.0', true);
+    wp_enqueue_script('_themename_blocks_bundle');
+}
+
+
+// 
+function _themename_block_assets() {
+    wp_register_script('_themename_blocks', get_template_directory_uri() . '/inc/blocks/dist/blocks-main.css');
+    wp_enqueue_script('_themename_blocks');
+}

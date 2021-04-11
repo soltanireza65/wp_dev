@@ -42,3 +42,10 @@ function live_search() {
     echo json_encode($productsArr);
     die;
 }
+
+
+function getProductCategories() {
+    return get_terms('product_cat', [
+        'hide_empty' => false
+    ]);
+}
