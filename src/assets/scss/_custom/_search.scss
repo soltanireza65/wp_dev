@@ -1,102 +1,14 @@
-// .header_search_form_wraper {
-//   select.cate-dropdown {
-//     background-color: #dc3545;
-//     color: white;
-//     padding: 10px;
-//     -webkit-appearance: none;
-//     -moz-appearance: none;
-//     appearance: none; /* Remove default arrow */
-//     background-image: url(./assets/images/); /* Add custom arrow */
-//     option,
-//     option:hover {
-//       background-color: #fff !important;
-//       color: black !important;
-//       border: none !important;
-//       outline: none !important;
-//     }
-//   }
-//   select.cate-dropdown:first-child {
-//      display: none !important;
-//   }
-// }
-
-// .search-field,
-// .cate-dropdown {
-//   border: none !important;
-//   border-radius: 0 10px 10px 0;
-// }
-// .search-field {
-//   @media (max-width: 600px) {
-//     border-radius: 0 12px 12px 0 !important;
-//   }
-//   @media (min-width: 1000px) {
-//      width: 100%;
-//      border-radius: 0 12px 12px 0 !important;
-//   }
-//   @media (max-width: 900px) {
-//     width: 80px;
-//      background-color: #dc3545;
-//   }
-
-//   border-radius: 0 !important;
-// }
-// @media only screen and (max-width: 900px) {
-//   .search-field {
-//     width: 130px;
-//   }
-// }
-// @media only screen and (max-width: 600px) {
-//   .woocommerce-product-search .top_search_cat_select {
-//     display: none;
-//   }
-// }
-
-// .header_serach_input,
-// #woocommerce-product-search-field {
-//   height: 32px !important;
-//   background-color: #dee0e6;
-// }
-
-// div.header_search_form_wraper span.selection {
-//   .select2-selection--single,
-//   .select2-selection {
-//     background-color: #dee0e6 !important;
-//     border-radius: 0%;
-//     height: 43px;
-//   }
-// }
-
-// .app_woo_search_field {
-//   height: 43px;
-// }
-
-// .select2-container--default
-//   .select2-selection--single
-//   .select2-selection__rendered {
-// line-height: 3.1;
-// display: none !important;
-// }
-
-// .woocommerce-product-search {
-//   height: 40px !important;
-// }
-
-// .select2-selection.select2-selection--single {
-//   display: none !important;
-// }
-
-// @media only screen and (max-width: 800px) {
-//   .select2-container {
-//     display: none !important;
-//     margin-right: 10px;
-//   }
-// }
-
 // ===============================================
 .header_search_form_wraper {
   // border-radius: 15px !important;
   // overflow: hidden;
   padding: 0;
+  .result {
+    overflow: scroll;
+  }
+  .result--open {
+    opacity: 1;
+  }
 }
 
 .woocommerce-product-search {
@@ -166,4 +78,18 @@ body:focus {
 
 #result {
   // opacity: 0;
+}
+
+.spinner-loader {
+  width: 30px;
+  height: 30px;
+  // background: url(https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif);
+  // background: url(../images/svg/loading.svg);
+  // background: url(https://www.myprincipallifestyle.com/assets/img/loading.gif);
+  // background: url(../images/loading.png);
+  // z-index: 5546516 !important;
+  // display: none;
+}
+.spinner-loader--show{
+  // display: block !important;
 }
