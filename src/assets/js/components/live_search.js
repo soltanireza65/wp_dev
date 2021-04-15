@@ -49,15 +49,15 @@
 
 // export default Search
 
-import $ from "jquery"
+import $ from "jquery";
 $(document).ready(function () {
-  $("#product_cat").select2()
-})
-$("#result").css("opacity", 0)
+  $("#product_cat").select2();
+});
+$("#result").css("opacity", 0);
 // document.getElementById("product_search_result").innerHTML = "test"
 $("#keyword").on("keyup", function () {
   if ($("#keyword").val().length >= 3) {
-    $("#result_products").html("")
+    $("#result_products").html("");
     //
     $.ajax({
       url: admin_url.ajax_url,
@@ -68,7 +68,7 @@ $("#keyword").on("keyup", function () {
         product_cat: $("#product_cat").val(),
       },
       success: function (data) {
-        $("#result").css("opacity", 1)
+        $("#result").css("opacity", 1);
         $.each(data, function (index, product) {
           let result = `
           <li class="result-product d-flex justify-content-between">
@@ -82,20 +82,20 @@ $("#keyword").on("keyup", function () {
               </div>
             </a>
           </li>
-          `
+          `;
 
-          $("#result_products").append(result)
-        })
-        console.log(data)
+          $("#result_products").append(result);
+        });
+        console.log(data);
       },
       fail: function (err) {
-        console.log(err)
+        console.log(err);
       },
-    })
+    });
 
     //
   }
-})
+});
 
 // class Search {
 //   constructor() {
