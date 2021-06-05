@@ -1,0 +1,20 @@
+.blog-article-single {
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px !important;
+
+  .image-wrapper {
+    .wp-post-image {
+      width: 100%;
+      border-radius: 20px;
+    }
+  }
+  .content-wrapper {
+    text-align: right;
+    margin-top: 30px;
+    .entry-title {
+      font-size: 1.5rem;
+    }
+  }
+}

@@ -1,49 +1,53 @@
-@import "vendor/bootstrap/bootstrap_5";
+@import 'vendor/bootstrap/bootstrap_5';
 
-@import "vendor/select2/select";
-@import "vendor/swiper/swiper";
+@import 'vendor/select2/select';
+@import 'vendor/swiper/swiper';
 // @import "plugins/swiper/swiper";
 
-@import "abstracts/abstracts";
-@import "generic/normalize";
-@import "base/base";
+@import 'abstracts/abstracts';
+@import 'generic/normalize';
+@import 'base/base';
 
-@import "components/components";
+@import 'components/components';
 // @import "plugins/jetpack/infinite-scroll";
 
-@import "_custom/elementor";
-@import "_custom/shadow";
-@import "_custom/colors";
+@import '_custom/elementor';
+@import '_custom/shadow';
+@import '_custom/colors';
 
-@import "_custom/pooya";
-@import "_custom/carousel";
-@import "_custom/logo";
-@import "_custom/select";
-@import "_custom/search";
-@import "_custom/shop";
-@import "_custom/product";
-@import "_custom/checkout";
-@import "_custom/account";
-@import "_custom/dokan";
-@import "_custom/cart";
-@import "_custom/menu";
-@import "_custom/header";
-@import "_custom/footer";
-@import "_custom/select";
-@import "_custom/minicart";
-@import "_custom/thankyou";
-@import "_custom/dashboard";
-@import "_custom/wishlist";
-@import "_custom/brands";
-@import "_custom/fonts";
-@import "_custom/404";
-@import "_custom/typography";
-@import "_custom/messages";
-@import "_custom/widget";
+@import '_custom/pooya';
+@import '_custom/carousel';
+@import '_custom/logo';
+@import '_custom/select';
+@import '_custom/search';
+@import '_custom/shop';
+@import '_custom/product';
+@import '_custom/checkout';
+@import '_custom/account';
+@import '_custom/dokan';
+@import '_custom/cart';
+@import '_custom/menu';
+@import '_custom/header';
+@import '_custom/footer';
+@import '_custom/select';
+@import '_custom/minicart';
+@import '_custom/thankyou';
+@import '_custom/dashboard';
+@import '_custom/wishlist';
+@import '_custom/brands';
+@import '_custom/fonts';
+@import '_custom/404';
+@import '_custom/typography';
+@import '_custom/messages';
+@import '_custom/widget';
 // @import "_custom/nav";
-@import "_custom/megamenu";
-@import "_custom/breadcrumb";
-@import "_custom/page";
+@import '_custom/megamenu';
+@import '_custom/breadcrumb';
+@import '_custom/page';
+@import '_custom/article-card';
+@import '_custom/article-listitem';
+@import '_custom/article-single';
+@import '_custom/blog';
 
 // norm
 * {

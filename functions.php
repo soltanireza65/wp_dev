@@ -46,3 +46,14 @@ function _themename_prevent_wp_login() {
 		exit();
 	}
 }
+
+
+function kharidpack_get_part($slug = null, $slug2 = null) {
+	if ($slug !== null) {
+		if ($slug2 !== null) {
+			get_template_part('/template-parts/' . $slug, $slug2);
+		} else {
+			get_template_part('/template-parts/' . $slug);
+		}
+	}
+}

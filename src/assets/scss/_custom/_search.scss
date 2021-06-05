@@ -4,10 +4,11 @@
   // overflow: hidden;
   padding: 0;
   .result {
+    opacity: 0;
     overflow: scroll;
   }
   .result--open {
-    opacity: 1;
+    // opacity: 1;
   }
 }
 
@@ -90,6 +91,6 @@ body:focus {
   // z-index: 5546516 !important;
   // display: none;
 }
-.spinner-loader--show{
+.spinner-loader--show {
   // display: block !important;
 }

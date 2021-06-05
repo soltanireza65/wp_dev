@@ -17,3 +17,6 @@ let x = 0;
 $("body").click(() => {
   // alert(true);
 });
+$(document).ready(function () {
+  $('#product_cat').select2();
+});
